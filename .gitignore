@@ -1,5 +1,3 @@
 *.xml
-# Project exclude paths
-/13_NodeJS/04_Express使用/crud-express/node_modules/
-/13_NodeJS/04_Express使用/express-demo/node_modules/
-/13_NodeJS/04_Express使用/feedback-demo/node_modules/
+*.DS_Store
+.idea
