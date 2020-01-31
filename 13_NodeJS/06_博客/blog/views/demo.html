@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    {{ include './header.html'}}
+    <h1>Hello {{name}}</h1>
+    {{ include './footer.html'}}
+</body>
+
+</html> -->
+{{ extend './layout.html'}}
+{{block 'head'}}
+	<style type="text/css">
+	body {
+	    background-color: skyblue;
+	}
+	</style>
+{{/block}}
+{{block 'content'}}
+	<div>
+	    <h1>demo填坑内容</h1>
+	</div>
+{{/block}}
+{{block 'script'}}
+	<script>
+	window.alert('demo页面自己的 js脚本');
+	</script>
+{{/block}}

@@ -1,0 +1,14 @@
+{
+  "name": "lucky-npm",
+  "version": "0.0.1",
+  "description": "lucky-npm",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zfz",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

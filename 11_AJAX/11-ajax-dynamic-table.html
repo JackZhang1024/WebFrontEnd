@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动态渲染数据到表格中</title>
+</head>
+
+<body>
+    <!--art-template 模板引擎 http://aui.github.io/art-template/zh-cn/docs/api.html -->
+    <table id="demo"></table>
+    <script id="tmpl" type="text/x-art-template">
+    {{each comments}}
+    <!-- each 内部$value 拿到的是当前被遍历的那个元素 注意结尾each前面有斜杠/-->
+        <tr>
+           <td>{{$value.author}}</td>
+           <td>{{$value.content}}</td>
+           <td>{{$value.created}}</td>
+        </tr>
+    {{/each}} 
+    </script>
+    <script src="template-web.js"></script>
+    <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'test.php');
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (this.readyState !== 4) {
+            return;
+        }
+        var res = JSON.parse(this.responseText);
+        console.log(res);
+        // 模板所需的数据
+        var context = {comments: res.data};
+        // 借助引擎API渲染数据
+        var html = template('tmpl', context);
+        console.log(html);
+        //1. 选择模板引擎
+        
+        //2. 下载模板引擎JS文件
+        //3. 引入到页面中
+        //4. 准备一个模板
+        //5. 准备一个数据
+        //6. 通过模板引擎的JS提供的一个函数将模板和数据整合得到渲染结果HTML
+        //7. 将渲染结果的HTML 设置到 默认的元素的 innerHTML 中
+
+        // 为什么不在JS变量中写模板？
+        // 1. 如果将模板下到js中， 维护不方便，不能换行，没有着色
+        // 为什么使用script来写模板
+        // script模板类型不是text/javascript，就不会执行
+        document.getElementById('demo').innerHTML = html;
+    }
+    </script>
+</body>
+
+</html>

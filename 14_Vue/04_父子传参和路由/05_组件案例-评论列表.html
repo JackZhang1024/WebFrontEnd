@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./lib/bootstrap.css">
+  <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <cmt-box @func="loadComments"></cmt-box>
+    <ul class="list-group">
+      <li class="list-group-item" v-for="item in list" :key="item.id">
+        <span class="badge">评论人:{{item.user}}</span>
+        {{item.content}}
+      </li>
+    </ul>
+
+  </div>
+  <template id="tmpl">
+    <div>
+      <div class="form-group">
+        <label for="">评论人：</label>
+        <input type="text" class="form-control" v-model="user">
+      </div>
+
+      <div class="form-group">
+        <label for="">评论内容：</label>
+        <textarea class="form-control" v-model="content"></textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="button" class="btn btn-primary" value="发表评论" @click="postcomment">
+      </div>
+    </div>
+  </template>
+  <script>
+    var commentBox = {
+      template: '#tmpl',
+      data() {
+        return {
+          user: '',
+          content: ''
+        }
+      },
+      methods: {
+        postcomment() {
+          // 发表评论的方法
+          // 分析发表品论的业务逻辑
+          // 1. 评论数据存放到哪里？ 存放到 localstorage 中
+          // 2. 先组织出一个最新的品论数据对象
+          // 3. 把 评论对象 存放到 localstorage 中
+          // 4. localStorage 只支持存储字符串 需要 JSON.stringify
+          // 5. 在保存最新的评论数据之前 要先从localstorage 获取到之前存储的评论数据
+          // 转化为一个对象 然后 把最新的评论 push 进去 
+          // 如果获取到的localstorage数据为空 则可以返回一个‘[]’ 让 JSON.parse转换
+          // 把最新的评论数组 再次调用 JSON.stringify 转为字符串，然后调用 localstorage.setItem()
+          var comment = { id: Date.now(), user: this.user, content: this.content }
+
+          // 从localstorage中获取所有的评论 
+          var list = JSON.parse(localStorage.getItem('cmts')||'[]');
+          list.unshift(comment);
+          // 保存最新的品论数据
+          localStorage.setItem('cmts', JSON.stringify(list)); 
+          this.user=this.content = '';
+          this.$emit('func');
+        }
+      } 
+    }
+
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        list: [
+          { id: Date.now(), user: '李白', content: '天生我才必有用' },
+          { id: Date.now(), user: '江小白', content: '劝君更饮一杯酒' },
+          { id: Date.now(), user: '小马', content: '我姓马, 风吹草地见牛羊' },
+        ]
+      },
+      methods: {
+         loadComments(){
+           // 从localstorge获取数据
+           var list = JSON.parse(localStorage.getItem('cmts')||'[]');
+           this.list = list;
+         }
+      },
+      components: {
+        'cmt-box': commentBox
+      },
+      beforeCreate() {  //实例未完全创建出来执行 
+        // 注意：这里不能调用loadComments方法，data和methods方法都没有初始化完成
+      },
+      created() {  //methods和data已经初始化,常用于操作数据，发起ajax请求
+        this.loadComments();
+      },
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery动画取消</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        #panel,#flip{
+            padding: 5px;
+            text-align: center;
+            background-color: aqua;
+            border: solid 1px aquamarine;
+        }
+        #panel{
+            padding: 5px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideDown(3000);
+            });
+            $("#stop").click(function () {
+                $("#panel").stop();
+            });
+        });
+
+    </script>
+</head>
+<body>
+   <button id="stop">停止滑动</button>
+   <div id="flip">点我向下滑动面板</div>
+   <div id="panel">Hello World</div>
+</body>
+</html>

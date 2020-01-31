@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>尝试对一个不同源地址发起一个AJAX请求</title>
+</head>
+
+<body>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    // Access to XMLHttpRequest at 'https://www.baidu.com/' (redirected from 'http://www.baidu.com/') from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+    // 同源意思就是 协议 域名 端口 三者相同的地址 不同源地址 默认不能相互发送AJAX请求
+    // http://www.baidu.com 不允许不同源的地址发送AJAX请求 
+
+    // 不同源地址之间如果需要相互请求 必须服务端和客户端配合才能完成
+    // 校验目标  能发送请求 能接受请求
+    // img link script iframe
+    $.get('http://www.baidu.com', function(argument) {
+        // body...
+        console.log(argument);
+    })
+    // 
+    </script>
+    <!-- iframe  -->
+    <iframe src="load/index.html" frameborder="0"></iframe>
+</body>
+
+</html>

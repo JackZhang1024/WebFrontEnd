@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>val用法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+     <script>
+         $(document).ready(function () {
+             $("button").click(function () {
+                 alert("值为： "+$("#a_baidu").attr("href"));
+             });
+         });
+
+     </script>
+     <p>名称： <a id="a_baidu" href="http://www.baidu.com">百度</a></p>
+     <button>显示href属性的值</button>
+</body>
+</html>

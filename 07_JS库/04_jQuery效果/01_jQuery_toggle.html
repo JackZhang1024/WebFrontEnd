@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle方法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>显示/隐藏</p>
+    <button id="button_toggle" type="button">Toggle</button>
+    <script>
+        $(document).ready(function () {
+            $("#button_toggle").click(function () {
+
+                $("p").toggle();
+
+            });
+        });
+    </script>
+</body>
+</html>

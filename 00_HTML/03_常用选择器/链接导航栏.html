@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>链接导航栏</title>
+    <style>
+        .nav {
+            text-align: center;
+        }
+        
+        .nav a {
+            width: 120px;
+            height: 50px;
+            background-image: url(images/bg.png);
+            /* 因为 a 是行内元素 没有大小 我们需要转换 */
+            display: inline-block;
+            /* 1. text-align 让盒子内的文字水平居中对齐 
+               行内元素 行内块元素 我们可以看做文本
+               2. 行高等于盒子的高度 可以让单行文本垂直居中
+
+            */
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            line-height: 50px;
+        }
+        
+        .nav a:hover {
+            background-image: url(images/bgc.png);
+        }
+        
+        .banner {
+            text-align: center;
+        }
+        
+        p {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#">网站首页</a>
+        <a href="#">网站首页</a>
+        <a href="#">网站首页</a>
+        <a href="#">网站首页</a>
+        <a href="#">网站首页</a>
+        <a href="#">网站首页</a>
+    </div>
+    <div class="banner">
+        <p>123</p>
+    </div>
+</body>
+
+</html>

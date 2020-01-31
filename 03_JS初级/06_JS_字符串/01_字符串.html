@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+    <script>
+        var x = "hello";
+        var y = new String("world");
+        var z = "10 4px 20px 5";
+        z = z.replace("px", "");
+        //alert(z);
+        var l = "10 4px 20px 5";
+        //l = l.replace(px/g, "");
+        // g 执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）
+        // m 执行多行匹配
+        var ll = l.replace(new RegExp("px","gm"),"");
+        alert(ll);
+        //注意： 此处replace的第一个参数为正则表达式，/g是全文匹配标识。
+        //以上这篇js replace(a,b)之替换字符串中所有指定字符的方法
+
+        //alert(x.length);
+        //alert(typeof x);
+        //alert(typeof y);
+    </script>
+
+
+</body>
+</html>

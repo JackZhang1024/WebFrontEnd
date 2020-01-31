@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>快速识别预解析结果</title>
+    <script>
+        // 案例一
+        // var a = 25;
+
+        // function abc() {
+        //     console.log(a); // undefined
+        //     var a = 10;
+        // }
+        // abc();
+        // console.log(a); // 25
+
+
+        // 案例二
+        // console.log(a); // a 函数代码
+
+        // function a() {
+        //     console.log("aaaaa");
+        // }
+        // var a = 1;
+        // console.log(a); // 1
+
+
+        // 案例三
+        // var a = 18;
+        // f1();
+
+        // function f1() {
+        //     var b = 9;
+        //     console.log(a); // undefined
+        //     console.log(b); // 9
+        //     var a = '123';
+        // }
+
+
+
+        // 案例四
+        // f1();
+
+        // console.log(c); // 9 
+        // console.log(b); // 9
+        // console.log(a); // 报错 undefined
+
+        // function f1() {
+        //     // var a = b = c = 9;
+
+        //     // 注意：上面的一句相当于下面的语句 a 是局部变量 b,c 是隐式全局变量
+        //     // var a ;
+        //     // a = 9;
+        //     // b = 9;
+        //     // c = 9;
+
+        //     console.log(a); // 9 
+        //     console.log(b); // 9 
+        //     console.log(c); // 9
+        // }
+    </script>
+
+    <script>
+        // 案例五
+        // f1(); // 不能调用
+        // var f1 = function() {
+        //     console.log(a); // undefined
+        //     var a = 10;
+        // }
+
+        // 上面的操作等价于下面的语句
+        // var f1; // 函数提升 
+        // f1(); // 不能调用 不知道f1是函数还是变量
+        // f1 = function() {
+        //     console.log(a); // undefined
+        //     var a = 10;
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

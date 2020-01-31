@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>val用法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+     <script>
+         $(document).ready(function () {
+             $("button").click(function () {
+                 alert("值为： "+$("#test").val());
+             });
+         });
+
+     </script>
+     <p>名称： <input type="text" id="test" value="菜鸟教程"></p>
+     <button>显示值</button>
+</body>
+</html>

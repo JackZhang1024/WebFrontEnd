@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        url: 'time.php',
+        type: 'GET',
+        beforeSend: function(xhr) {
+            // body...
+            // 所有发送请求操作之前
+            console.log('beforeSend', xhr);
+        },
+        success: function(res) {
+            console.log(res);
+        },
+        error: function(xhr) {
+            // 只有请求不正常才会执行
+            console.log('error', xhr);
+        },
+        complete: function(xhr) {
+            // body...
+            console.log('complete', xhr);
+        }
+    });
+    </script>
+</body>
+
+</html>

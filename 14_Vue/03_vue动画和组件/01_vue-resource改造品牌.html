@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <script src="./lib/vue-resource-1.3.4.js"></script>
+    <script src="./lib/mock.js"></script>
+    <script src="./lib/mockserver.js"></script>
+    <!-- qs.js 字符串解析 -->
+    <!-- <script src="https://cdn.bootcss.com/qs/6.9.0/qs.js"></script> -->
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加品牌</h3>
+            </div>
+            <div class="panel-body form-inline">
+                <!-- <label for="">
+                        Id: <input type="text" name="id" class="form-control">
+                    </label> -->
+                <label for="">
+                    Name: <input type="text" name="name" v-model="name" class="form-control">
+                </label>
+                <input type="button" value="添加" @click="add" class="btn btn-primary">
+            </div>
+        </div>
+
+        <!-- tab-striped -->
+        <table class="table table-bordered table-hover tab-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Ctime</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in list" :key="item.id">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.ctime}}</td>
+                    <td>
+                        <a href="#" @click.prevent="del(item.id)">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        // 如果我们通过了全局配置了，请求的数据接口 根域名，则 在每次单独发起 http请求的时候，
+        // 请求的URL路径，应该以相对路径开头，前面不能带 / 否则，不会启用根路径做拼接
+        Vue.http.options.root = 'http://vue.studyit.io/';
+        // 全局开启 emulateJSON 选项
+        Vue.http.options.emulateJSON = true;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: '',
+                list: [
+                    { id: 1, name: "五菱宏光", ctime: new Date() },
+                    { id: 2, name: "保时捷", ctime: new Date() },
+                    { id: 3, name: "大众", ctime: new Date() },
+                ]
+            },
+            methods: {
+                // 获取所有的品牌的列表
+                getAllList() {
+                    // 由于已经导入了 Vue-resource这个包，可以直接通过 this.$http 来发起
+                    // 数据请求
+                    // 2. 根据接口API文档，发起一个get请求
+                    // 3. this.$http.get('url').then(result=》{})
+                    // 4. 当通过回调结果我们可以拿到服务端返回的数据
+                    // 5. 先判断 result.status是否为0 如果为0 表示 成功 
+                    // 可以把 result.message 赋值给 this.list
+                    // http://vue.studyit.io/api/getprodlist 
+                    this.$http.get('api/getprodlist', {
+                        params: {}
+                    }).then(result => {
+                        // 注意： 通过$http 获取到的数据，都在result.body中获取
+                        var result = result.body;
+                        if (result.status == 0) {
+                            this.list = result.message;
+                        } else {
+                            alert('获取数据失败');
+                        }
+                    });
+                },
+
+                // add() {
+                //     // 添加品牌到服务器后台
+                //     // 分析：
+                //     // 1. 查看API 要发送一个POST请求 this.$http.post(`路径`, {})
+                //     // 2. this.$http.post(`路径`, {}, {}) 中要接收三个参数
+                //     // 第一个参数： 要请求的URL地址
+                //     // 第二个参数： 要提交给服务器的数据，要以对象的形式提交给服务器 {name: this.name}
+                //     // 第三个参数： 是一个配置对象 要以那种表单数据类型提交过去 {emulateJSON:true} 以普通表达格式将数据提交给服务器
+                //     // application/x-www-form-urlencoded 
+                //     // 3. 在post方法中，使用.then 来设置成功的回调函数，如果想要拿到回调的数据 result.body
+                //     // 
+                //     console.log(this.name);
+                //     this.$http.post('api/addproduct',
+                //         { id: this.list.length, name: this.name },
+                //         { emulateJSON: true }).then(result => {
+                //             console.log(result);
+                //             console.log(result.body);
+                //             console.log(result.status);
+                //             this.list.push(result.body);
+                //         });
+                // },
+
+                add() {
+                    // 添加品牌到服务器后台
+                    // 分析：
+                    // 1. 查看API 要发送一个POST请求 this.$http.post(`路径`, {})
+                    // 2. this.$http.post(`路径`, {}, {}) 中要接收三个参数
+                    // 第一个参数： 要请求的URL地址
+                    // 第二个参数： 要提交给服务器的数据，要以对象的形式提交给服务器 {name: this.name}
+                    // 第三个参数： 是一个配置对象 要以那种表单数据类型提交过去 {emulateJSON:true} 以普通表达格式将数据提交给服务器
+                    // application/x-www-form-urlencoded 
+                    // 3. 在post方法中，使用.then 来设置成功的回调函数，如果想要拿到回调的数据 result.body
+                    // 
+                    console.log(this.name);
+                    this.$http.post('api/addproduct',
+                        { id: this.list.length, name: this.name }).then(result => {
+                            console.log(result);
+                            console.log(result.body);
+                            console.log(result.status);
+                            this.list.push(result.body);
+                        });
+                },
+
+                del(id) {
+                    // 删除品牌
+                    this.$http.get('api/delproduct/' + id, {
+                        params: {}
+                    }).then(result => {
+                        console.log(result.body);
+                        // 删除指定ID的数据
+                        this.list.some((item, i) => {
+                            if (item.id == result.body.id) {
+                                this.list.splice(i, 1);
+                                return true;
+                            }
+                        });
+                    });
+                }
+            },
+            created() {  //methods和data已经初始化,常用于操作数据，发起ajax请求
+                this.getAllList();
+            },
+        });
+    </script>
+</body>
+
+</html>

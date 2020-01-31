@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证邮箱</title>
+    <script>
+        function validateForm(){
+            var x=document.forms["myForm"]["email"].value;
+            var atpos=x.indexOf("@");
+            var dotpos=x.lastIndexOf(".");
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+                alert("不是一个有效的 e-mail 地址");
+                return false;
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+   <!--注意这块 return methodname(); 后面的分号必须有 -->
+   <form name="myForm" onsubmit="return validateForm();" method="post" action="demo_form.php">
+       邮箱 ：<input type="text" name="email">
+       <input type="submit" value="提交">
+   </form>
+
+</body>
+</html>

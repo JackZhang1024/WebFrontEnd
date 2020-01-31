@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的用法初步学习一</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+</head>
+<body>
+    <!--基础语法： $(selector).action()-->
+    <!-- jQuery的入口函数和JavaScript的入口函数 -->
+    <script>
+        $(document).ready(function(){
+            // 执行代码
+            $("#p_ready").html("p_ready");
+        });
+        $(function(){
+            // 执行代码
+            $("#p_anonymous_function").html("p_anonymous_function");
+        });
+        // 以上两种写法都一样 都是在Dom加载完成之后执行
+        window.onload = function (ev) {
+            // 执行代码
+            document.getElementById("p_window_onload").innerHTML = "p_window_onload";
+        }
+        // window的onload方法是等到所有的内容都加载完成之后才会执行
+    </script>
+    <p id="p_ready"></p>
+    <p id="p_anonymous_function"></p>
+    <p id="p_window_onload"></p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS对象</title>
+</head>
+<body>
+    <script>
+        
+        function getName() {
+            pFirstName = document.getElementById("p_first_name");
+            pLastName = document.getElementById("p_last_name");
+            pFullName = document.getElementById("p_full_name");
+
+            pFirstName.innerHTML = person.firstName;
+            pLastName.innerText = person.lastName;
+            pFullName.innerHTML = person.fullName();
+            // 不加括号输出函数表达式
+            //pFullName.innerHTML = person.fullName;
+            // methodName : function() { code lines }
+         }
+        
+        var person = {
+            firstName: "Thomas",
+            lastName:"Ad",
+            age: 20,
+            sex: "male",
+            fullName : function () {
+                return this.firstName+"."+this.lastName;
+            }
+        }
+
+    </script>
+
+    <p id="p_first_name">FirstName</p>
+    <p id="p_last_name">lastName</p>
+    <p id="p_full_name">FullName</p>
+    <button type="button" onclick="getName()">获取名称</button>
+
+</body>
+</html>

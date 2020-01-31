@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery尺寸</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+      $(document).ready(function () {
+          $("button").click(function () {
+              var txt = "";
+              txt += "div的宽度是  ： "+$("#div1").width()+"</br>";
+              txt += "div的高度是 :  "+$("#div1").height()+"</br>";
+              txt += "div的innerWidth是 (包含padding):  "+$("#div1").innerWidth()+"</br>";
+              txt += "div的innerHeight高度是 (包含padding):  "+$("#div1").innerHeight()+"</br>";
+              txt += "div的outerWidth是 (包含border):  "+$("#div1").outerWidth()+"</br>";
+              txt += "div的outerHeight高度是 (包含border):  "+$("#div1").outerHeight();
+              $("#div1").html(txt);
+          });
+      });
+  </script>
+   <div id="div1" style="height: 400px; width: 300px; padding: 10px;border:10px solid red; background-color: lightblue"></div>
+   <button>显示div元素的尺寸</button>
+   <p>width() - 返回元素的宽度</p>
+   <p>height() - 返回元素的高度</p>
+</body>
+</html>

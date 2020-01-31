@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性选择器</title>
+    <style>
+        /* 选出所有带有class属性的 */
+        /* div[class] {
+            background-color: pink;
+        } */
+        /* 选出class=demo的 */
+        /* div[class=demo] {
+            background-color: pink;
+        } */
+        /* 选出test开头的标签 */
+        /* div[class^=test] {
+            background-color: pink;
+        } */
+        /* 选出test结尾的标签 */
+        /* div[class$=test] {
+            background-color: pink;
+        } */
+        /* 选出所有带test的标签 */
+        
+        div[class*=test] {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">王者荣耀</div>
+    <div>王者荣耀</div>
+    <div>王者荣耀</div>
+    <div class="firsttest">王者荣耀</div>
+    <div class="test">王者荣耀</div>
+    <div class="test1">王者荣耀</div>
+    <div class="test2">王者荣耀</div>
+</body>
+
+</html>

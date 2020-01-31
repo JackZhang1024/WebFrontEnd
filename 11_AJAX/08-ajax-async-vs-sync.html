@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <script>
+		// console.time('abc');
+	 	// for (var i = 0; i < 1000000000; i++) {
+	 		
+	 	// }
+	 	// console.timeEnd('abc');
+
+	 	console.time('async');
+	 	var xhr = new XMLHttpRequest();
+	 	// open 方法的第三个参数 async 可以传入一个布尔值 默认为true
+	 	xhr.open('GET', 'time.php', true);
+	 	xhr.send();
+	 	console.timeEnd('async');
+
+
+
+	 	console.time('sync');
+	 	// 同步模式 ajax 操作会有愣等情况
+	 	// 区别在于 send 方法会不会出现等待情况
+	 	var xhrSync = new XMLHttpRequest();
+	 	// open 方法的第三个参数 async 可以传入一个布尔值 默认为true
+	 	xhrSync.open('GET', 'time.php', false);
+	 	xhrSync.send();
+	 	console.log(xhrSync.responseText);
+	 	console.timeEnd('sync');
+
+	 </script>
+</body>
+</html>

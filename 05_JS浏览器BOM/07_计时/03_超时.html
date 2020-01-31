@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超时</title>
+</head>
+<body>
+    <button type="button" onclick="starTimeOut()">开启超时</button>
+    <button type="button" onclick="stopTimeOut()">停止超时</button>
+
+    <script>
+        var myVar;
+        function starTimeOut() {
+            myVar = setTimeout(function () {
+                alert("即将退出");
+            }, 3000);
+        }
+
+        function stopTimeOut() {
+            clearTimeout(myVar);
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 我们要监听到数据的改变 拼接fullname-->
+    <!-- 如何监听到数据的改变 -->
+
+    <input type="text" v-model="firstname">+
+    <input type="text" v-model="lastname">=
+    <input type="text" v-model="fullname">
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        "firstname": '',
+        "lastname": '',
+        "fullname": '',
+      },
+      methods: {},
+      watch: {
+        // 使用这个 属性，来监视 data中指定数据的变化，然后触发这个 watch 中对应的
+        // function 处理函数
+        'firstname': function (newVal, oldVal) {
+          console.log('监视到了firstname发生变化了');
+          console.log(newVal + '----' + oldVal);
+          // this.fullname = this.firstname+'-' + this.lastname;
+          this.fullname = newVal + '-' + this.lastname;
+        },
+        'lastname':function(newVal, oldVal) {
+          this.fullname = this.firstname + '-' + newVal;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

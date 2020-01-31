@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击按钮弹出对话框</title>
+    <script>
+        // 下面的代码执行会报错
+        // 解决方法：
+        // 1. 把这段代码放到body最后面
+        // 2. window.onload
+        // var btnObj = document.getElementById("btn");
+        // btnObj.onclick = function() {
+        //     alert("最终版 hell world");
+        // };
+        // 先有按钮 才能获取 获取之后才能注册事件
+    </script>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery删除过滤元素</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("p").remove(".italic");
+        });
+    });
+
+</script>
+    <p>这是一个段落</p>
+    <p class="italic"><i>这是div中的一个段落</i></p>
+    <p class="italic"><i>这是div中的另外一个段落</i></p>
+    <button>移除所有 class="italic"的p元素</button>
+</body>
+</html>
+

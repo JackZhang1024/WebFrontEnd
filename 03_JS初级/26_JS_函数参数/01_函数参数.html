@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数参数</title>
+</head>
+<body>
+  <p>计算所有的参数之和</p>
+  <p id="p_demo"></p>
+  <script>
+      function sumAll() {
+          var i, sum = 0;
+          for (i = 0; i<arguments.length; i++){
+              sum += arguments[i];
+          }
+          return sum;
+      }
+      document.getElementById("p_demo").innerHTML = sumAll(1, 2, 34, 56);
+  </script>
+
+</body>
+</html>

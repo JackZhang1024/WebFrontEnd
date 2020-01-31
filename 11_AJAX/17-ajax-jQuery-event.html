@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery全局事件处理函数</title>
+    <style type="text/css">
+    .loading {
+        display: none;
+        position: fixed;
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="loading">正在玩命加载中...</div>
+    <button id="btn">点击</button>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ajaxStart(function() {
+        // body...
+        $('.loading').fadeIn();
+    });
+    $(document).ajaxStop(function() {
+        $('.loading').fadeOut();
+    });
+    $('#btn').on('click', function(argument) {
+        // body...
+        //  $.ajax({
+        //     'url': 'time.php',
+        //     beforeSend: function(xhr) {
+        //         // body...
+        //         // 显示加载提示
+        //         console.log('注意请求即将开始', xhr);
+
+        //     },
+        //     complete: function(xhr) {
+        //         // body...
+        //         // 结束提示
+        //         console.log('注意请求结束', xhr);
+        //     }
+        // });
+
+        $.get('time.php', {}, function (argument) {
+        	// body...
+        });
+    });
+    </script>
+</body>
+
+</html>

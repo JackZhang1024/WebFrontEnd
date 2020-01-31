@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $.get('name.php', { id: 1 }, function(res) {
+        // body...
+        console.log(res);
+    });
+    $.post('name.php', { id: 1 }, function(res) {
+        console.log(res);
+    });
+    $.getJSON('name.php', { id: 1 }, function(res) {
+        // body...
+        console.log(res);
+    });
+    
+    </script>
+</body>
+
+</html>

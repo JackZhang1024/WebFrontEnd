@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 必须带一个属性 content 伪元素 其实 before是个盒子 */
+        /* 这个盒子是个行内元素  可以转换*/
+        
+        div::before {
+            content: "我";
+            /* width: 200px;
+            height: 200px;
+            background-color: pink;
+            display: block; */
+        }
+        
+        div::after {
+            content: "十八岁";
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>今年</div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX load callback方法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+   <!--$(selector).load(URL,data,callback);-->
+   <!--
+    可选的 callback 参数规定当 load() 方法完成后所要允许的回调函数。回调函数可以设置不同的参数：
+    responseTxt - 包含调用成功时的结果内容
+    statusTXT - 包含调用的状态
+    xhr - 包含 XMLHttpRequest 对象
+    -->
+   <script>
+       $(document).ready(function () {
+          $("button").click(function () {
+              // 将AJAX中的id为p1的元素的内容选中然后放到指定的div1元素中
+              $("#div1").load("AJAX2.txt", function (responseTxt, statusTxt, xhr) {
+                  if (statusTxt == "success"){
+                      alert("外部内容加载成功!")
+                  }
+                  if (statusTxt == "error"){
+                      // status 返回的是状态码 404
+                      // statusText返回的是调用结果内容
+                      alert("status "+xhr.status+"  "+xhr.statusText);
+                  }
+              });
+          });
+       });
+   </script>
+   <div id="div1"><h2>使用 jQuery AJAX修改文本</h2></div>
+   <button>获取外部文本</button>
+</body>
+</html>

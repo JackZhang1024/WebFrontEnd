@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型转换</title>
+    <script>
+        // 类型转化
+
+        // 其他类型转数字类型 三中方式
+        // 1. parseInt(); //转为整数
+        // console.log(parseInt("10")); // 10
+        // console.log(parseInt("10a")); // 10
+        // console.log(parseInt("g10")); // NaN
+        // console.log(parseInt("1fs0")); // 1 
+        // console.log(parseInt("10.98")); // 10
+        // console.log(parseInt("10.98asd")); // 10
+
+        // 2. parseFloat(); // 转小数
+        // console.log(parseFloat("10")); // 10
+        // console.log(parseFloat("10a")); // NaN
+        // console.log(parseFloat("g10")); // NaN
+        // console.log(parseFloat("1fs0")); // NaN
+        // console.log(parseFloat("10.98")); // 10.98
+        // console.log(parseFloat("10.98asd")); // 10.98
+
+        // 3. Number();转数字
+        // console.log(Number("10")); // 10
+        // console.log(Number("10a")); // 10
+        // console.log(Number("g10")); // NaN
+        // console.log(Number("1fs0")); // 1 
+        // console.log(Number("10.98")); // 10.98
+        // console.log(Number("10.98asd")); // NaN
+
+        // 总结：想转整数用paresInt(), 想转小数 pareseFloat()
+        // 想要转数字 Number(); 要比上面的两种方式严格
+
+        // 其他类型转字符串
+        // 1. .toString();
+        // var num = 10;
+        // console.log(num.toString());
+        // // 2. String()
+        // var num1 = 20;
+        // console.log(String(num1));
+        // 如果变量有意义 调动.toString() 使用转换
+        // 如果变量没有意义 使用 String()转化
+        // var num2;
+        // console.log(num2.toString());
+        // var num3 = null;
+        // console.log(num3.toString());
+
+        // var num2;
+        // console.log(String(num2));
+        // var num3 = null;
+        // console.log(String(num3));
+
+        // 其他类型转布尔类型
+        // 1. Boolean(值)
+        // console.log(Boolean(1));  // true
+        // console.log(Boolean(0));  // false
+        // console.log(Boolean(11)); // true
+        // console.log(Boolean(-10));// true 
+        // console.log(Boolean("haha"));// true
+        // console.log(Boolean("")); // false
+        // console.log(Boolean(null)); // false
+        // console.log(Boolean(undefined)); // false
+
+        var str = 10;
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

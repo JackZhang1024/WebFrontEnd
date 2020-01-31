@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>z-index</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            /* z-index: 0; 只有定位的盒子才有  position:absolute  */
+        }
+        
+        .red {
+            z-index: 1;
+        }
+        
+        .blue {
+            background-color: blue;
+            left: 50px;
+            top: 50px;
+            z-index: 2;
+        }
+        
+        .green {
+            background-color: green;
+            left: 100px;
+            top: 100px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red"></div>
+    <div class="blue"></div>
+    <div class="green"></div>
+
+</body>
+
+</html>

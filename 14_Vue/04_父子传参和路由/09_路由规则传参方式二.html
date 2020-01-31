@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+   <!--1.  安装vue-router 路由模块 -->
+   <script src="./lib/vue-router.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 如果在路由中 使用查询字符串 给路由传递参数 则不需要修改 路由规则的path属性 -->
+    <router-link to="/login/12/lisi">登录</router-link>
+    <router-link to="/register">注册</router-link>
+    <router-view></router-view>
+
+  </div>
+  <script>
+    var login = {
+      template: '<h1>登录-----{{$route.params.id}}---{{$route.params.name}}</h1>',
+      data(){
+        return {
+          msg:'123'
+        }
+      },
+      created() {  //methods和data已经初始化,常用于操作数据，发起ajax请求
+        console.log(this.$route);
+        console.log(this.$route.params.id);
+      },
+    };
+
+    var register = {
+      template: '<h1>注册</h1>'
+    };
+
+    const routerObj = new VueRouter({
+      routes: [
+        { path: '/login/:id/:name', component: login },
+        { path: '/register', component: register },
+      ]
+    });
+
+    var vm = new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      router: routerObj
+    });
+    
+  </script>
+</body>
+
+</html>

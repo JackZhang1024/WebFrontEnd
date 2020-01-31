@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie</title>
+</head>
+<body>
+    <!-- Cookie的创建/读取/修改/删除 -->
+    <!-- document.cookie="username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/";-->
+
+    <button type="button" onclick="createCookie()">创建Cookie</button>
+    <button type="button" onclick="checkCookie()">检测Cookie</button>
+    <script>
+
+        function createCookie() {
+            // 读取cookie
+            var cookie = document.cookie;
+            //alert(cookie);
+
+            // 创建cookie
+            document.cookie = "username=Jone";
+            document.cookie = "sex=male";
+            document.cookie = "age=10";
+            //alert(document.cookie);
+
+            // 修改Cookie
+            document.cookie = "age=12";
+            //alert(document.cookie);
+
+            //您还可以为 cookie 添加一个过期时间（以 UTC 或 GMT 时间）。默认情况下，cookie 在浏览器关闭时删除：
+            var d = new Date();
+            var exdays = 1;
+            //d.setTime(d.getTime()+(exdays*24*60*60*1000));
+            d.setTime(d.getTime()+(5*1000));
+            var expires = "expires="+d.toGMTString();
+            document.cookie = expires;
+            alert(document.cookie);
+            // 删除cookie
+        }
+
+        function checkCookie() {
+            alert(document.cookie);
+        }
+
+    </script>
+</body>
+</html>

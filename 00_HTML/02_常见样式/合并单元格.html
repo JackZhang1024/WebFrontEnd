@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>合并单元格</title>
+</head>
+
+<body>
+    <!-- 
+        先上后下 先左后右
+        1. 跨列合并 colspan 不需要的单元格删除掉
+        2. 删除的个数 = 合并的个数-1
+     -->
+    <table width="400" height="100" border="1">
+        <tr>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td colspan="2">123</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <!-- <td colspan="2">123</td> -->
+            <td>123</td>
+            <td>123</td>
+        </tr>
+    </table>
+
+
+    <!-- 
+        先上后下 先左后右
+        1. 跨行合并 rowspan 不需要的单元格删除掉
+        2. 删除的个数 = 合并的个数-1
+     -->
+    <table width="400" height="100" border="1">
+        <tr>
+            <td>123</td>
+            <td>123</td>
+            <td rowspan="3">123</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+    </table>
+</body>
+
+</html>

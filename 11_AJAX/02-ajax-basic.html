@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// AJAX 是一套 API 核心提供的类型 XMLHttpRequest
+		// 1. 安装浏览器 （用户代理）
+		var xhr = new XMLHttpRequest();
+		 xhr.open('GET', './time.php');
+		var response = xhr.send();
+	    // 因为客户端永远不知道服务端何时才能返回我们需要的响应
+	    // 所以AJAX API 采用的是事件机制（通知的感觉）
+	    xhr.onreadystatechange = function () {
+	    	// 这个事件在状态发生变化的时候进行调用
+	    	// console.log(1);
+	    	// console.log(this.readyState);
+	    	if (this.readyState !==4) {
+	    		return;
+	    	}
+	    	console.log(this.responseText);
+	    }
+	    
+	             
+	</script>
+	<div>ahdahd </div>
+	
+</body>
+</html>

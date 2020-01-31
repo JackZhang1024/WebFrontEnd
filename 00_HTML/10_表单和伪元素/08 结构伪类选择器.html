@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结构伪类选择器</title>
+    <style>
+        /* a:hover 鼠标经过a链接的时候 */
+        /* 首个子元素 */
+        /* li:first-child {
+            background-color: pink;
+        } */
+        /* 最后一个元素 */
+        /* li:last-child {
+            background-color: purple;
+        } */
+        /* 中间的元素 :nth-child(n) 第n个元素*/
+        /* li:nth-child(3) {
+            background-color: red;
+        } */
+        /* even偶数 选出偶数的li */
+        /* li:nth-child(even) {
+            background-color: royalblue;
+        } */
+        /* odd 选出奇数的li */
+        /* li:nth-child(odd) {
+            background-color: salmon;
+        } */
+        /* n=0 1 2 3 4 5 2n 0 2 4 6 8 类似于even */
+        /* 选出2n+1的行 */
+        /* li:nth-child(2n+1) {
+            background-color: skyblue;
+        } */
+        /* 选出4的倍数行 */
+        
+        li:nth-child(4n) {
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>刘备</li>
+        <li>诸葛亮</li>
+        <li>关羽</li>
+        <li>张飞</li>
+        <li>马超</li>
+    </ul>
+</body>
+
+</html>

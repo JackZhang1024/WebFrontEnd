@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>行内样式</title>
+</head>
+
+<body>
+    <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+        <caption>
+            <h4 style="color: pink; font-size: 25px;">青春不常在 抓紧谈恋爱</h4>
+        </caption>
+        <tr height="40">
+            <td>所在地区</td>
+            <td><input type="text" value="北京" style="color: #ccc;" /></td>
+        </tr>
+        <tr height="40">
+            <td>用户名</td>
+            <td><input type="text" value="andy" style="color: #ccc;" /></td>
+        </tr>
+        <tr height="40">
+            <td>密码</td>
+            <td><input type="password" value="1111" maxlength="6" /></td>
+        </tr>
+        <tr height="40">
+            <td>性别</td>
+            <td style="color: blue;">男 <input type="radio" name="sex" /> 女 <input type="radio" name="sex" /> </td>
+        </tr>
+        <!-- 下拉表单   -->
+        <tr height="40">
+            <td>年龄</td>
+            <td>
+                <select id="" name="">
+                        <option value="">选择年份</option>
+                        <option value="">1990</option>
+                        <option value="">1991</option>
+                        <option value="">1992</option>
+                        <option value="">1993</option>
+                    </select>
+                <select id="" name="">
+                        <option value="">选择月份</option>
+                        <option value="">1月</option>
+                        <option value="">2月</option>
+                        <option value="">3月</option>
+                        <option value="">4月</option>
+                    </select>
+            </td>
+        </tr>
+
+        <tr height="40">
+            <td>籍贯</td>
+            <td>
+                <select id="" name="">
+                        <option value="">籍贯</option>
+                        <option value="" selected="selected">北京</option>
+                        <option value="">上海</option>
+                        <option value="">广州</option>
+                        <option value="">深圳</option>
+                    </select>
+            </td>
+        </tr>
+        <tr height="40">
+            <td>喜欢的类型</td>
+            <td>妩媚 <input type="checkbox" name="love" /> 气质 <input type="checkbox" name="love" /> 小鲜肉 <input type="checkbox" name="love" /> 鹿晗 <input type="checkbox" name="love" />
+            </td>
+        </tr>
+        <tr height="40">
+            <td></td>
+            <td>
+                <input type="button" value="注册" />
+                <input type="submit" value="提交" />
+                <input type="reset" value="重置" />
+                <input type="image" src="images/login.png" width="120" />
+            </td>
+        </tr>
+
+        <!--  文件提交  -->
+        <tr height="40">
+            <td>上传头像</td>
+            <td>
+                <input type="file" value="注册" />
+            </td>
+        </tr>
+
+        <!-- 留言  不支持富文本-->
+        <tr>
+            <td>给我浏览</td>
+            <td>
+                <textarea name="" id="" cols="40" rows="20" style="color: #ccc;"></textarea>
+            </td>
+        </tr>
+
+
+    </table>
+</body>
+
+</html>

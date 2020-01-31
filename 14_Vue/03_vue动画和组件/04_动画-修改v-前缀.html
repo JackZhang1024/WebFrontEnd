@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        /* 自定义两组动画  */
+        /* v-enter 【这是一个时间点】 是进入之前，元素的起始状态 此时还没有开始进入 */
+        .v-enter,
+        /* v-leave-to 【】动画离开之后，离开的终止状态，此时，元素 动画已经结束 */
+        .v-leave-to {
+           opacity: 0;
+           transform: translateX(150px);
+        }
+
+        /* v-enter-active【入场动画的时间段】 */
+        /* v-leave-active【离场动画的时间段】 */
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 0.8s ease;
+        }
+
+
+        .mine-enter,
+        /* v-leave-to 【】动画离开之后，离开的终止状态，此时，元素 动画已经结束 */
+        .mine-leave-to {
+           opacity: 0;
+           transform: translateY(80px);
+        }
+
+        /* v-enter-active【入场动画的时间段】 */
+        /* v-leave-active【离场动画的时间段】 */
+        .mine-enter-active,
+        .mine-leave-active {
+            transition: all 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="toggle" @click="flag=!flag">
+        <!-- <h3 v-if="flag">Hello</h3> -->
+        <!-- 1. 使用transition 元素 把需要被动画控制的元素 包裹起来 -->
+        <transition>
+            <h3 v-if="flag">Hello</h3>
+        </transition>
+
+
+        <input type="button" value="toggle2" @click="flag2=!flag2">
+        <!-- <h3 v-if="flag">Hello</h3> -->
+        <!-- 1. 使用transition 元素 把需要被动画控制的元素 包裹起来 -->
+
+        <!-- mine 用户区别不同的动画 -->
+        <transition name="mine">
+            <h1 v-if="flag2">Hello</h1>
+        </transition>
+
+    </div>
+    <script>
+       var vm = new Vue({
+           el: '#app',
+           data: {
+             flag: false,
+             flag2: false
+           },
+           methods:{
+               
+           }
+       });
+    </script>
+</body>
+</html>

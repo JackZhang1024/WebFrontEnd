@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click( function () {
+                $("#div1").fadeIn(2000);
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn("fast");
+                $("#div4").fadeIn(4000);
+            });
+        });
+    </script>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+
+        #div3 {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+
+        #div4 {
+            width: 200px;
+            height: 200px;
+            background: green;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <button>点击淡入 div 元素</button>
+    <br><br>
+    <div id="div1">Div1</div><br>
+    <div id="div2">Div2</div><br>
+    <div id="div3">Div3</div><br>
+    <div id="div4">Div4</div><br>
+</body>
+</html>

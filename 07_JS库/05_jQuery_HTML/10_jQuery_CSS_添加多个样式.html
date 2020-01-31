@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryCSS给多个元素添加样式</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .important{
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("body div:first").addClass("important blue");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="div1">这是一些重要的文本</div>
+    <div id="div2">这是一些重要的文本</div>
+    <br>
+    <button>为第一个div元素添加类</button>
+</body>
+</html>

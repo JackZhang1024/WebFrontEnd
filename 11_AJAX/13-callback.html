@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function getTimeStamp(done) {
+        // body...
+        setTimeout(function() {
+            // body...
+            // return Date.now();
+            done(Date.now());
+
+        }, 1000);
+    }
+    // var timestamp = getTimeStamp(function(timestamp) {
+    //     // body...
+    //     console.log(timestamp / 1000 / 60 / 60);
+    // });
+
+    var done = function(timestamp){
+         console.log(timestamp / 1000 / 60 / 60);
+    }
+    // z指定拿到数据过后怎么做 事情我给你 你来做
+    var timestamp = getTimeStamp(done);
+    </script>
+</body>
+
+</html>

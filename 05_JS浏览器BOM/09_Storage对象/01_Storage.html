@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage对象</title>
+</head>
+<body>
+<p id="p_result"></p>
+<script>
+    // 判断浏览器是否支持
+    if (typeof(Storage)!== "undefined") {
+        // 存储
+        localStorage.setItem("name", "jack");
+        alert(localStorage.getItem("name"));
+        var result = localStorage.getItem("name");
+        // 检索
+        document.getElementById("p_result").innerHTML = result;
+    } else {
+      document.getElementById("p_result").innerHTML = "你的浏览器不支持该对象的使用";
+    }
+</script>
+</body>
+</html>

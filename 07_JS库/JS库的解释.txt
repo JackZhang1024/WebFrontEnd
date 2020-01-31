@@ -1,0 +1,28 @@
+在本教程中，我们将了解到一些广受欢迎的 JavaScript 框架：
+1. jQuery
+2. Prototype
+3. MooTools
+所有这些框架都提供针对常见 JavaScript 任务的函数，包括动画、DOM 操作以及 Ajax 处理。
+
+主要的 jQuery 函数是 $() 函数（jQuery 函数）。
+如果您向该函数传递 DOM 对象，它会返回 jQuery 对象，带有向其添加的 jQuery 功能。jQuery 允许您通过 CSS 选择器来选取元素。
+
+jQuery是一个JavaScript函数库。写的少做的多
+
+jQuery库包含以下功能：
+1. HTML 元素选取
+2. HTML 元素操作
+3. CSS 操作
+4. HTML 事件函数
+5. JavaScript 特效和动画
+6. HTML DOM 遍历和修改
+7. AJAX
+8. Utilities
+
+使用CDN的好处
+
+使用 BootCDN、百度、又拍云、新浪、谷歌或微软的 jQuery，有一个很大的优势：
+
+许多用户在访问其他站点时，已经从百度、又拍云、新浪、谷歌或微软加载过 jQuery。所以结果是，
+当他们访问您的站点时，会从缓存中加载 jQuery，这样可以减少加载时间。同时，大多数 CDN 都
+可以确保当用户向其请求文件时，会从离用户最近的服务器上返回响应，这样也可以提高加载速度。

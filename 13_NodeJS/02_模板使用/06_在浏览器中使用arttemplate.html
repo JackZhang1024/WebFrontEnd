@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_在浏览器中使用arttemplate</title>
+</head>
+
+<body>
+    <!-- 注意：在浏览器中需要引用
+		// 强调
+	 -->
+    <script type="text/javascript" src="node_modules/art-template/lib/template-web.js"></script>
+    <!--      <script type="text/template" id="tpl">
+     	大家好，我叫 {{ name }}
+     	我今年 {{age}} 岁了
+     	我来自 {{address}}
+     	我喜欢 {{each hobbies}} {{ $value }} {{/each}}
+     </script> -->
+    <script type="text/template" id="tpl">
+        <!DOCTYPE html>
+    	<html>
+    	<head>
+    		<title>Document</title>
+    	</head>
+    	<body>
+	    	大家好，我叫 {{ name }}
+	     	我今年 {{age}} 岁了
+	     	我来自 {{address}}
+	     	我喜欢 {{each hobbies}} {{ $value }} {{/each}}
+    	</body>
+    	</html>
+     </script>
+    <script>
+    var ret = template('tpl', {
+        name: 'Jack',
+        age: 18,
+        address: '北京市昌平区',
+        hobbies: [
+            '写代码',
+            '唱歌',
+            '读书'
+        ]
+    });
+    console.log(ret);
+    </script>
+</body>
+
+</html>

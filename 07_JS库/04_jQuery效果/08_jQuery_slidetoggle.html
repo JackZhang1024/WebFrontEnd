@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SlideToggle</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+       #flip, #panel{
+           padding: 5px;
+           background: yellow;
+           border: solid 1px red;
+           text-align: center;
+       }
+       #panel{
+           padding: 50px;
+       }
+    </style>
+</head>
+<body>
+    <div id="flip">flip</div>
+    <div id="panel">panel</div>
+    <script>
+        $(function(){
+            $("#flip").click(function(){
+                $("#panel").slideToggle(2000);
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery JSONP的使用</title>
+</head>
+
+<body>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        url: 'http://site4.io/jsonp/server.php',
+        dataType: 'jsonp',
+        success: function(argument) {
+            // body...
+            console.log(argument);
+        }
+    });
+    // 利用script可以发送不同源的地址请求
+    </script>
+</body>
+
+</html>

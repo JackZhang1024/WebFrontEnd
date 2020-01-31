@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第一个JS程序 显示日期</title>
+    <script>
+        var max_value = Number.MAX_VALUE;
+        alert(max_value);
+        var aBool = Boolean(1);
+        console.log(aBool);
+
+        function foo(e) {
+            console.log(e)
+        }
+
+        function foo2() {
+            var e;
+            console.log(e);
+        }
+        foo();
+        foo(1223);
+        foo2();
+
+        var url = "http://www.cnblogs.com/smyhvae/";
+        var str = encodeURIComponent(url);
+        console.log(str)
+        console.log(decodeURIComponent(str))
+
+        function showDate() {
+            var a = 100;
+            console.log(a);
+            document.getElementById('p_date').innerHTML = new Date();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>第一个JS程序 显示日期</h1>
+    <p id="p_date">日期</p>
+    <button type="button" onclick="showDate()">点击</button>
+</body>
+
+</html>

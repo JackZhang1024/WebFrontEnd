@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盒子默认宽度</title>
+    <style>
+        .father {
+            height: 200px;
+            background-color: pink;
+            width: 300px;
+            /* padding-left: 30px;  因为父盒子 有宽度 给定值了 则padding 会撑开 */
+        }
+        
+        .son {
+            /* 儿子没有给定宽度 用的是默认宽度 所以padding 不会撑开盒子  */
+            padding-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">123</div>
+    </div>
+</body>
+
+</html>

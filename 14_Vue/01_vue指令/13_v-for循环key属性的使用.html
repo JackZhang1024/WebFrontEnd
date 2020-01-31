@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <label>Id:
+                <input type="text" name="" id="" v-model="id">
+            </label>
+            <label>Name:
+                <input type="text" name="" id="" v-model="name">
+            </label>
+            <input type="button"  value="添加" @click="add">
+        </div>
+        <!-- :key 保证数据的唯一性 -->
+        <!-- 在组件中，使用v-for 循环的时候，或者在一些特殊情况中，如果v-for 有问题，
+            必须使用 key属性 -->
+        <p v-for="item in list" :key="item.id">
+            <input type="checkbox" name="" id="">
+            {{item.id}}---{{item.name}}
+        </p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                list: [
+                    { id: 1, name: '李四' },
+                    { id: 2, name: '王五' },
+                    { id: 3, name: '赵六' },
+                    { id: 4, name: '刘七' },
+                ]
+            },
+            methods: {
+                add(){
+                    // 添加方法
+                    //this.list.push({id:this.id, name:this.name});
+                    this.list.unshift({id:this.id, name:this.name});
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

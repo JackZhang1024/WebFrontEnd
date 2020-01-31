@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptVoid的使用</title>
+</head>
+<body>
+   <a href="javascript:void(0)">点我并没有什么用</a>
+   </br >
+   <a href="javascript:void(alert('Warning!!!'))">点我弹出对话框</a>
+   <!--href="#"与href="javascript:void(0)"的区别
+   # 包含了一个位置信息，默认的锚是#top 也就是网页的上端。
+   而javascript:void(0), 仅仅表示一个死链接。
+   在页面很长的时候会使用 # 来定位页面的具体位置，格式为：# + id。
+   如果你要定义一个死链接请使用 javascript:void(0) 。-->
+   <a href="#p_top">点击我定位到尾部</a>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <p id="p_top">定位到尾部</p>
+</body>
+</html>

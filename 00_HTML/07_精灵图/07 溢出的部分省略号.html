@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>溢出的部分省略号</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+            width: 200px;
+            height: 30px;
+            border: 1px solid #000;
+            white-space: nowrap;
+            /* 强制在同一行内显示所有文本 直到文本结束或遭遇br标签对象才换行 */
+            line-height: 30px;
+            overflow: hidden;
+            /* 溢出的文字用省略号替代 */
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+        <li>哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈或</li>
+    </ul>
+
+</body>
+
+</html>

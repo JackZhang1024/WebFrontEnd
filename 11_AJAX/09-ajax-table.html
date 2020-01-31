@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态渲染数据到表格中</title>
+</head>
+<body>
+	<!--art-template 模板引擎 http://aui.github.io/art-template/zh-cn/docs/api.html -->
+	<table></table>
+	 <script>
+	 	var xhr = new XMLHttpRequest();
+	 	xhr.open('GET', 'test.php');
+	 	xhr.send();
+	 	xhr.onreadystatechange = function(){
+	 		if (this.readyState != 4){
+                return;
+	 		}
+	 		var res = JSON.parse(this.responseText);
+	 		var data = res.data;
+	 		for (var i = 0; i < data.length; i++) {
+	 		    var tr = document.createElement('tr');
+	 		    tr.innerHTML = '<td>'+data[i].id+'</td><td></td>';	 
+	 		}
+	 	}
+	 	
+	 </script>
+</body>
+</html>

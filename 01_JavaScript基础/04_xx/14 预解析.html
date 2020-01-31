@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预解析</title>
+    <script>
+        // 预解析 ： 提前解析代码
+        // 预解析：就是在解析代码之前
+        // 把变量的声明提前了 ----- 提前到当前所在的所在作用域的最上面    
+        // 函数的声明也会被提前 ----- 提前到当前所在的所在作用域的最上面    
+
+        // var num;
+        // console.log(num); // undefined
+
+        // 把变量的声明提前了    
+        // console.log(num); // undefined
+        // var num = 10;
+
+        // f1();
+
+        // function f1() {
+        //     console.log("哈哈哈");
+        // }
+
+        // function f1() {
+        //     console.log("Hello World");
+        // }
+        // f1();
+
+        // function f1() {
+        //     console.log("Hello China");
+        // }
+        // f1();
+
+
+
+        // function f1() {
+        //     console.log(num); // undefined
+        //     var num = 10;
+        // }
+
+        // f1();
+
+
+        //  实例
+        // var num = 20;
+
+        // function f1() {
+        //     // console.log(num); // undefined 
+        //     // var num = 10;
+
+        //     // 上面的两句就相当于下面的语句 声明提前了
+        //     var num;
+        //     console.log(num);
+        //     num = 10;
+        // }
+
+        // f1();
+
+        // var num; // 此时只有定义 没有赋值
+        // 函数调用的时候，会把函数的声明提前到作用域的上面
+        f1(); // 调用
+        var num = 20; // 这个变量的声明会提升到变量使用之前 但是赋值操作是在f1()调用之后
+        function f1() {
+            console.log(num); // undefined
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

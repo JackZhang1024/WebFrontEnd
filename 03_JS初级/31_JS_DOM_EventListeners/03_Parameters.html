@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参</title>
+</head>
+<body>
+    <p>实例演示了使用 addEventListener() 方法是如何传递参数</p>
+    <p>点击按钮执行计算</p>
+    <button id="myBtn">点我</button>
+    <p id="demo"></p>
+    <script>
+        var p1 = 5;
+        var p2 = 8;
+
+        document.getElementById("myBtn").addEventListener("click", function (ev) {
+            myFunction(p1, p2);
+        });
+        function myFunction(a, b) {
+            var result = a + b;
+            document.getElementById("demo").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

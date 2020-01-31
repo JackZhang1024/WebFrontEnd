@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery CSS 方法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+               //$("p:first").css("background-color", "yellow");
+               $("p:first").css({"background-color":"yellow","font-size":"200%"});
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <!--css() 方法设置或返回被选元素的一个或多个样式属性。-->
+    <h2>这是一个标题</h2>
+    <p style="background-color: #ff0000">这是一个段落</p>
+    <p style="background-color: #00ff00">这是一个段落</p>
+    <p style="background-color: #0000ff">这是一个段落</p>
+    <button>设置第一个p元素的background-color</button>
+
+</body>
+</html>

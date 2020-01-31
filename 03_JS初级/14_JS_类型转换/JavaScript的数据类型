@@ -1,0 +1,22 @@
+JavaScript 类型转换
+
+Number() 转换为数字， String() 转换为字符串， Boolean() 转化为布尔值。
+
+JavaScript 数据类型
+在 JavaScript 中有 5 种不同的数据类型：
+string
+number
+boolean
+object
+function
+3 种对象类型：
+Object
+Date
+Array
+2 个不包含任何值的数据类型：
+null
+undefined
+
+我们可以使用 typeof 来获取一个变量是否存在，如 if(typeof a!="undefined"){}，而不要去使用 if(a) 因为如果 a 不存在（未声明）则会出错。
+正因为 typeof 遇到 null,数组,对象时都会返回 object 类型，所以当我们要判断一个对象是否是数组时。
+或者判断某个变量是否是某个对象的实例则要选择使用另一个关键语法 instanceof

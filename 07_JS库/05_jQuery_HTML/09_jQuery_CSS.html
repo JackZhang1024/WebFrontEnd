@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryCSS</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .important{
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("h1, h2, p").addClass("blue");
+                $("div").addClass("important")
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <p>这是一个段落</p>
+    <p>这是另外一个段落</p>
+    <div>这是一些重要的文本</div>
+    <br>
+    <button>为元素添加clas</button>
+</body>
+</html>

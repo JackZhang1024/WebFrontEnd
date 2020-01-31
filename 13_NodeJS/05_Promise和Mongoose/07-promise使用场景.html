@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="user_form">
+    </form>
+    <script type="text/template" id="tpl">
+        <div>
+            <label for="">用户</label>
+            <input type="text" value="{{user.username}}">
+        </div>
+        <div>
+            <label>年龄</label>
+            <input type="text" name="age" value="{{user.age}}">
+        </div>
+        <div>
+            <label for="">职业</label>
+            <select name="" id="">
+                {{each jobs}}
+                {{if user.job === $value.id}}
+                    <option value="{{$value.id}}" selected>{{$value.name}}</option>
+                {{else }}
+                    <option value="{{$value.id}}">{{$value.name}}</option>
+                {{/if}} 
+                {{/each}}
+            </select>
+        </div>
+     </script>
+    <script src="node_modules/art-template/lib/template-web.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+    // 用户表
+    // 职业信息
+    // 使用JSONServer来处理
+    // http://localhost:3000/users
+    // http://localhost:3000/jobs
+
+    function get(url, callback) {
+        var onReq = new XMLHttpRequest();
+        onReq.onload = function() {
+            callback(onReq.responseText);
+        }
+        onReq.open("get", url, true);
+        onReq.send();
+    }
+
+    // get("http://localhost:3000/users/1", function(data){
+    //      data = JSON.parse(data);
+    //      console.log(data); 
+    //      var htmlstr = template('tpl', {user: data});
+    //      // console.log(htmlstr); 
+    //      document.querySelector('#user_form').innerHTML = htmlstr;
+    // });
+
+    // 这个 get 是 callback 方式的API 
+    // 可以使用 promise 来解决这个问题
+    // get("http://localhost:3000/users/3", function(userdata) {
+    //     get("http://localhost:3000/jobs", function(jobsdata) {
+    //         var htmlstr = template('tpl', {
+    //             user: JSON.parse(userdata),
+    //             jobs: JSON.parse(jobsdata)
+    //         });
+    //         console.log(htmlstr);
+    //         document.querySelector('#user_form').innerHTML = htmlstr;
+    //     });
+    // 
+
+    // get 方法的Promise操作
+    function pGet(url) {
+        return new Promise(function(resolve, reject) {
+            var onReq = new XMLHttpRequest();
+            onReq.onload = function() {
+                // callback(onReq.responseText);
+                resolve(onReq.responseText);
+            }
+            onReq.onerror = function(err) {
+                reject(err);
+            }
+            onReq.open("get", url, true);
+            onReq.send();
+        });
+    }
+
+    var data = {};
+    pGet('http://localhost:3000/users/3')
+        .then(function(user) {
+            data.user = user;
+            return pGet('http://localhost:3000/jobs')
+        })
+        .then(function(jobs) {
+            data.jobs = jobs;
+            var htmlstr = template('tpl', {
+                user: JSON.parse(data.user),
+                jobs: JSON.parse(data.jobs)
+            });
+            console.log(htmlstr);
+            document.querySelector('#user_form').innerHTML = htmlstr;
+        })
+
+    // var data = {};
+    // $.get('http://localhost:3000/users/3')
+    //     .then(function(user) {
+    //         data.user = user;
+    //         return $.get('http://localhost:3000/jobs')
+    //     })
+    //     .then(function(jobs) {
+    //         data.jobs = jobs;
+    //         var htmlstr = template('tpl', {
+    //             user: data.user,
+    //             jobs: data.jobs
+    //         });
+    //         console.log(htmlstr);
+    //         document.querySelector('#user_form').innerHTML = htmlstr;
+    //     })
+    </script>
+</body>
+
+</html>

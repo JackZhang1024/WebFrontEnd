@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <mycom3></mycom3>
+  </div>
+  <div id="app2">
+    <mycom3></mycom3>
+    <login></login> 
+  </div>
+  <!-- 在被控制的div外边使用 使用 template 元素 定义组件的模板结构 -->
+  <template id="tmpl">
+      <div>
+        <h1>这是通过template元素在外部定义的组件结构，这个方式，有代码的智能提示和高亮</h1>
+        <h4>好用不错</h4>
+      </div>
+  </template>
+
+  <template id="tmpl2">
+    <h1>这是私有的login 组件</h1>
+  </template>
+
+  
+
+  <script>
+    Vue.component('mycom3', {
+      template: '#tmpl'
+    });
+    var vm = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    });
+    var vm2 = new Vue({
+      el: '#app2',
+      data:{
+
+      },
+      methods:{
+
+      },
+      filters: {
+
+      },
+      directives: {
+
+      },
+      components: {
+        // 定义实例内部的私有组件
+        login: {
+          template:'#tmpl2'
+        } 
+      },
+
+      beforeCreate() {  //实例未完全创建出来执行 
+        
+      },
+      created() {  //methods和data已经初始化,常用于操作数据，发起ajax请求
+        
+      },
+      beforeMount() { //挂载数据之前
+        
+      },
+      mounted() { //内存中的模板已挂载到页面中
+        
+      },
+      beforeUpdate() { //数据更新之前
+        
+      },
+      updated() { //页面数据已更新
+        
+      },
+      beforeDestroy() { //vue销毁之前
+        
+      },
+      destroyed() {  //已完全销毁
+        
+      },
+    });
+  </script>
+</body>
+
+</html>

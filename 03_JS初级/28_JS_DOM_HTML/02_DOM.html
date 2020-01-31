@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementsByTagName</title>
+</head>
+<body>
+    <p>你好，世界</p>
+    <div id="main">
+        <p> DOM是非常实用的</p>
+        <p>该实例展示了 <b>getElementsByTagName</b>>方法</p>
+    </div>
+    <script>
+        var x = document.getElementById("main");
+        var y = document.getElementsByTagName("p");
+        document.write('id="main"元素中的第一个段落为： '+y[0].innerHTML);
+
+    </script>
+
+</body>
+</html>

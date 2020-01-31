@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域链</title>
+    <script>
+        // 小明 ---家是五代同堂  有钱 有权 有势
+        // 找不到找上级 找到找到为止  如果最终没有找到 那么就会报错 undefined 
+        var num = 10;
+
+        function f1() {
+            var num = 20;
+
+            function f2() {
+                var num = 30;
+
+                function f3() {
+                    var num = 40;
+                    console.log("今天是冬至 我爱吃饺子");
+                    console.log(num);
+                }
+                f3();
+            }
+            f2();
+        }
+        f1();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onLoad方法</title>
+</head>
+<body onload="checkCookies()">
+<script>
+    function checkCookies() {
+        if (navigator.cookieEnabled == true) {
+            alert("Cookies可用");
+        } else {
+            alert("Cookies不可用");
+        }
+    }
+</script>
+<p>弹框-提示浏览器 Cookie是否可用</p>
+</body>
+</html>

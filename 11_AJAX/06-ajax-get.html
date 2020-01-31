@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <ul id="list"></ul>
+	 <script>
+	 	var listElement = document.getElementById("list");
+
+	 	var xhr = new XMLHttpRequest();
+	 	// 这里任然使用问号来传递参数
+	 	xhr.open('GET', 'users.php');
+	 	xhr.send(null);
+	 	xhr.onreadystatechange = function (){
+	 		if (this.readyState !=4){
+                return;
+	 		}
+	 		console.log(this.responseText);
+	 		var data =  JSON.parse(this.responseText);
+	 	    for (var index=0; index<data.length; index++){
+                var liElement = document.createElement("li");
+                liElement.innerHTML = data[index].name;
+                liElement.id = data[index].id;
+                listElement.appendChild(liElement);
+                liElement.addEventListener('click', function () {
+      				// 通过AJAX操作获取服务端对应的数据信息
+                    // console.log(this.id);
+                    var xhr1 = new XMLHttpRequest();
+                    xhr1.open('GET', 'users.php?id='+this.id);
+                    xhr1.send();
+                    xhr1.onreadystatechange = function(){
+                    	if (this.readyState != 4) return;
+                    	console.log(this.responseText);
+                    	var obj = JSON.parse(this.responseText);
+                    	alert(obj.name+" . "+obj.age);
+                    }
+                });
+	 	    }
+	 	    // 给每一个li注册点击事件
+	 	    // 因为li后来动态创建的 在获取数据创建元素之后再添加点击事
+	 	}
+
+
+	 </script>
+</body>
+</html>

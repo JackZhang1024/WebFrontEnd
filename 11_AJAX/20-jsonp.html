@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSONP</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+       function myonload(data) {
+       	// body...
+       	console.log('哈哈哈', data);
+       }
+    </script>
+    <script type="text/javascript" src="http://site4.io/data.js"></script>
+    <!-- 通过script 标签请求一个服务端的PHP文件 
+         这个文件返回的结果是一段 JS，作用是调用我们事先定义好的一个函数
+         从而得到服务端想要给客户端发过去的数据发送给客户端
+
+    -->
+
+</body>
+
+</html>

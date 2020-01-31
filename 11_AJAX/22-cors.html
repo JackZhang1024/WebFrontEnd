@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX跨域（CORS）跨源资源共享</title>
+	<!-- Cross Origin Resource Share -->
+</head>
+<body>
+     <script src="jquery.js"></script>
+     <script type="text/javascript">
+     	// 这块最快的方法就是在服务端进行处理
+     	$.get('http://site4.io/cors.php', {}, function (res){
+             console.log(res);
+     	})
+     </script>
+</body>
+</html>

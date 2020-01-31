@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX的get方法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+   <script>
+       $(document).ready(function () {
+          $("button").click(function () {
+              $.post("http://www.wanandroid.com/article/query/", {k:"android"},function (data, status) {
+                  alert("数据: \n"+data+"\n 状态:  "+status);
+              });
+          });
+       });
+   </script>
+
+   <button>发送一个HTTP POST 请求并返回结果内容</button>
+</body>
+</html>

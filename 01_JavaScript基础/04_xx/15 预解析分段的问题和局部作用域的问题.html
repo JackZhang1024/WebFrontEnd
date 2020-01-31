@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预解析分段的问题和局部作用域的问题</title>
+    <script>
+        // 预解析中，变量的提升，只会在当前的作用域中提升，提升到当前作用域的最上面
+        // 函数中的变量只会提前到函数的作用域的最前面，不会出去
+        // 预解析会分段（多对的script标签中函数重名，预解析的时候不会冲突） 
+
+        // function f1() {
+        //     console.log(num); // undefined 声明提前了
+        //     var num = 10;
+        // }
+        // f1();
+        // console.log(num); // undefined 找不到num
+
+        // 预解析过程：
+        // 1. 把变量的声明提升到当前作用域的最前面，只会提升声明，不会提升赋值
+        // 2. 把函数的声明提升到当前作用域的最前面，只会提升声明，不会提升调用
+        // 3. 先提升var 再提升function 
+
+        f1();
+
+        function f1() {
+            console.log("哈哈哈");
+        }
+    </script>
+    <script>
+        // f1();
+
+        function f1() {
+            console.log("嘎嘎噶");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt框</title>
+</head>
+<body>
+   <p id="p_greeting"></p>
+<script>
+    function myFunction() {
+        var result = prompt("Please input your name ", "Jack");
+        if (result!=null && result!="") {
+            x = "你好，"+result+" ,感觉今天如何?";
+            document.getElementById("p_greeting").innerHTML = x;
+        }
+    }
+
+</script>
+
+<input type="button" onclick="myFunction()" value="显示Prompt框"/>
+
+</body>
+</html>

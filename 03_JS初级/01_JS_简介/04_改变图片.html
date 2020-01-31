@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function changeImage() {
+            element = document.getElementById("img_dog")
+            if (element.src.match("dog_0")) {
+                element.src = "images/dog_1.jpg"
+            } else if (element.src.match("dog_1")) {
+                element.src = "images/dog_0.jpg"
+            }
+        }
+
+        function changeText() {
+            element = document.getElementById("p_beijing")
+            element.style.color = "green"
+        }
+    </script>
+</head>
+<body>
+<p id="p_beijing" style="color: blue">北京</p>
+<img id="img_dog" src="images/dog_0.jpg" width="300px" height="300px" onclick="changeImage()">
+<button type="button" onclick="changeText()">改变文字颜色</button>
+</body>
+</html>

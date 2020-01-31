@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数作为参数使用</title>
+    <script>
+        // function f1(x, y) {
+        //     console.log(x + y);
+        // }
+        // f1(10, 20);
+
+        // function f2(x, y){
+        //     console.log(x+y);  
+        // }
+        // f2("Hello", "World");
+
+        // function f3(x){
+        //    console.log(x);
+        // }
+        // f3(true);
+
+        // function f1(fn) {
+        //     fn(); // 函数的调用 ----说明fn这个变量中存储的是一个函数代码
+        // }
+
+        // function f2() {
+        //     console.log("这样也不错");
+        // }
+
+        // // f2 就是函数f2的代码 f2()是函数f2的调用
+        // f1(f2);
+
+        // 函数可以作为参数使用，如果一个函数作为参数，那么我们就说这个参数（函数）可以叫做回调函数
+        // 只要看到一个函数作为参数使用了，那就是回调函数
+        function sayHi(fn) {
+            console.log("您好啊");
+            fn();
+        }
+
+        function suSay() {
+            console.log("Hello World!");
+        }
+
+        function openEye(x, y) {
+            console.log(x + y);
+        }
+
+        sayHi(suSay);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

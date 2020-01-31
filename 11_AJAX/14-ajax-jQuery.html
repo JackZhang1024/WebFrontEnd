@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+    // 请求的地址 
+    // $.ajax('./time.php', {
+    // 	type: 'POST', // method 请求方法
+    // 	success: function (res) {
+    // 		// body...
+    // 		// res => 拿到的只是响应体
+    //            console.log(res);
+    // 	} 
+    // });
+
+    // $.ajax({
+    //         url: 'time.php',
+    //         // type: 'GET',
+    //         type: 'POST',
+    //         // 用于提交服务端的参数
+    //         // GET 请求就通过url 传参
+    //         // POST 请求就通过请求体传参
+    //         data: { id: 1, name: '张三' },
+    //         success: function(res) {
+    //             // body...
+    //             console.log(res);
+    //         }
+    //     });
+
+
+     $.ajax({
+            url: 'name.php',
+            type: 'GET',
+            // 用与设置响应体的类型 这样设置json 即时后台返回的就是一个字符串 response也是一个对象
+            dataType: 'json',
+            data: { id: 1, name: '张三' },
+            success: function(res) {
+                // body...
+                // res会自动根据服务端响应的 Content-Type 自动转换为对象
+                // 一旦设置的 dataType 选项，就不再关心 服务端 响应的 Content-Type
+                // 客户端会主管认为服务段返回的就是 JSON格式的字符串
+                console.log(res);
+                console.log(res.name);
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script id="tpl" type="text/html">
+        <h3>
+            <% =className% ></h3>
+        <ul>
+            <%for (var i=0; i< students.length;i++){%>
+                <li>
+                    <%=i+1%>.
+                        <%=students[i]%>
+                </li>
+                <%}%>
+                    </ul>
+    </script>
+    <script>
+        var data = {
+            name: "前端一起",
+            students: ["1", "2", "3", "4"]
+        };
+        window.onload = function() {
+            var html = template("tpl", data);
+            $("#demo").html(html);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS错误捕获</title>
+</head>
+<script>
+
+    var txt = "";
+
+    function message() {
+        try{
+            addalert("Welcome Guest");
+        }catch(err) {
+            txt = "本页面有一个错误。\n\n";
+            txt+="错误描述： "+err.message+" \n\n";
+            txt+="点击确定继续.\n\n";
+            alert(txt);
+        }
+    }
+
+</script>
+<body>
+<button type="button" onclick="message()">点击消息</button>
+</body>
+</html>

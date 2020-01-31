@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery动画</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        #div_block{
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                 $("#div_block").animate({height:'toggle'}, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+     <button type="button">开始动画</button>
+     <p>默认情况下，所有的HTML 元素有一个静态的位置，且是不可移动的，如果需要将位置改变，我们需要将元素的position 属性
+      设置为 relative, fixed, absolute 中的其中一种。
+     </p>
+     <div id="div_block"></div>
+</body>
+</html>

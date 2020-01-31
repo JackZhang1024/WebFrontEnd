@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <script>
+       function sum(a, b) {
+           var c=  a+b;
+           element = document.getElementById("p_result");
+           element.innerHTML = c;
+       }
+       // 非严格模式下给未声明变量赋值创建的全局变量，是全局对象的可配置属性，可以删除。
+       var var1 =1;
+       // var2是未声明变量
+       var2 = 2;
+       console.log(var1);
+       console.log(var2);
+
+       delete var1;
+       console.log(var1);
+
+       delete var2;
+       // 下面这句报错 因为var2是全局对象的可配置属性，可以被删除， 已经被上面的语句执行删除掉了
+       console.log(var2);
+
+   </script>
+
+</body>
+
+   <p id="p_result">结果</p>
+   <button type="button" onclick="sum(10, 20)" >求和</button>
+
+</html>

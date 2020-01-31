@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX发送POST请求</title>
+    <style type="text/css">
+    #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #555;
+        opacity: .5;
+        text-align: center;
+        line-height: 300px;
+        display: none;
+    }
+
+    #loading::after {
+        content: '加载中...';
+        color: #fff;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+    </div>
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" id="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" id="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button id="btn">登录</button></td>
+        </tr>
+    </table>
+	<script>
+		var btn = document.getElementById('btn');
+		var txtUser = document.getElementById('username');
+		var txtPassword = document.getElementById('password');
+		var loading = document.getElementById("loading");
+		btn.onclick = function() {
+			loading.style.display = 'block';
+		    // 1. 获取界面上的元素value
+		    var username = txtUser.value;
+		    var password = txtPassword.value;
+		    // 2. 通过XHR
+		    var xhr = new XMLHttpRequest();
+		    xhr.open('POST', 'login.php');
+		    // 一定注意 如果请求体是urlencoded 格式 必须设置这个请求头
+		    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		    // xhr.send('username='+username + "&password=" + password);
+		    // 字符串模板 注意模板字符串使用的向右的撇号 不是单引号
+		    var params = `username=${username}&password=${password}`;
+		    xhr.send(params);
+		    xhr.onreadystatechange = function() {
+		        // body...
+		        if (this.readyState !== 4) {
+		            return;
+		        }
+		        console.log(this.responseText);
+		        loading.style.display = 'none';
+		    }
+		}
+	</script>
+
+</body>
+
+</html>
+

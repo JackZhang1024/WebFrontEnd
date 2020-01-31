@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventListeners</title>
+</head>
+<body>
+  <p>该实例使用addEventListener()方法在按钮中添加点击事件</p>
+  <button type="button" id="myBtn">点我</button>
+  <p id="p_demo"></p>
+  <script>
+      document.getElementById("myBtn").addEventListener("click", displayDate);
+      document.getElementById("myBtn").addEventListener("click", sayHi);
+      function displayDate() {
+          document.getElementById("p_demo").innerHTML = Date();
+      }
+      function sayHi() {
+          alert("Hello World!")
+      }
+  </script>
+
+</body>
+</html>

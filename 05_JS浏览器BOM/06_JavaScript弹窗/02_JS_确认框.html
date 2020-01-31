@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确定框</title>
+</head>
+<body>
+
+<script>
+    function myFunction() {
+        var result = confirm("您确定要离开这个页面吗");
+        if (result) {
+            alert("你点击了确定");
+        } else {
+            alert("你点击了取消");
+        }
+    }
+
+</script>
+
+<input type="button" onclick="myFunction()" value="显示警告框"/>
+
+</body>
+</html>

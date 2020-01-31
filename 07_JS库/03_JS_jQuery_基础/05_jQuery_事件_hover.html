@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MouseEnter事件</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div>鼠标移动到此处，会弹出框</div>
+<script>
+    $(document).ready(function () {
+        $("div").hover(function () {
+                alert("Hover this div");
+            },
+            function () {
+                alert("Leave this div");
+            }
+        );
+    });
+</script>
+</body>
+</html>

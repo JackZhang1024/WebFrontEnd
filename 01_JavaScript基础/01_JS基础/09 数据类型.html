@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据类型</title>
+    <script>
+        var num = 10;
+        // js中的数据类型有哪些 如何获取这个数据的类型是那个？
+        // js中的原始数据类型 number string boolean null undefined object
+        // number 数字类型 （整数和小数）
+        // string 字符串类型 （值一般都是单引号或者是双引号括起来）
+        // boolean 布尔类型 （值只有两个 true(真1) false（假0））
+        // null 空类型 一个对象指向为空了，此时可以赋值为null
+        // undefined 未定义，值只有一个 undefinedx
+        // 什么情况下会出现 undefined
+        // 1. 变量声明了 没有赋值 结果是undefined
+        // 2. 函数没有返回值 如果接收了 结果也是undefined
+        var sex1 = true;
+        var sex2 = false;
+
+        var numOne;
+        // console.log(numOne); 结果undefined
+        console.log(numOne);
+        // console.log(numOne + 10); 结果NaN
+        console.log(numOne + 10);
+
+        var numTwo = 10;
+        var str = "小白";
+        var flag = true;
+        var nll = null;
+        var undef;
+        var obj = new Object();
+        console.log(typeof numTwo); // number
+        console.log(typeof str); // string
+        console.log(typeof flag); // boolean 
+        console.log(typeof nll); // object
+        console.log(typeof undef); // undefined
+        console.log(typeof obj); // object
+
+        console.log("10");
+        console.log(10);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

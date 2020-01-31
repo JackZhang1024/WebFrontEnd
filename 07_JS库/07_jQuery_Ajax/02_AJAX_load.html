@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX load方法</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+   <!--$(selector).load(URL,data,callback);-->
+   <!-- 将选择器添加到请求路径上 -->
+   <script>
+       $(document).ready(function () {
+          $("button").click(function () {
+              // 将AJAX中的id为p1的元素的内容选中然后放到指定的div1元素中
+              $("#div1").load("AJAX.txt #p1");
+          });
+       });
+   </script>
+   <p id="p1">文本</p>
+   <div id="div1"><h2>使用 jQuery AJAX修改文本</h2></div>
+   <button>获取外部文本</button>
+</body>
+</html>
